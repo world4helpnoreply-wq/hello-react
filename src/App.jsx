@@ -1,14 +1,57 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
+import Home from './Home.jsx';
+import ToDoList from './ToDoList.jsx';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Hello, React World!</h1>
-        <p>Welcome to your first React.js application.</p>
-        <p>This is a simple "Hello World" example.</p>
-      </header>
+    <Router>
+      <div className="App">
+        <Sidebar />
+        <MainContent />
+      </div>
+    </Router>
+  );
+}
+
+function Sidebar() {
+  const location = useLocation();
+  
+  return (
+    <div className="sidebar">
+      <nav className="sidebar-nav">
+        <h3>Menu</h3>
+        <ul>
+          <li>
+            <Link 
+              to="/" 
+              className={location.pathname === '/' ? 'active' : ''}
+            >
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link 
+              to="/todo" 
+              className={location.pathname === '/todo' ? 'active' : ''}
+            >
+              TO DO
+            </Link>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  );
+}
+
+function MainContent() {
+  return (
+    <div className="main-content">
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/todo" element={<ToDoList />} />
+      </Routes>
     </div>
   );
 }
