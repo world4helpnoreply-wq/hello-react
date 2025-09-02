@@ -1,0 +1,149 @@
+.calculator-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  color: white;
+}
+
+.calculator-container h1 {
+  color: #61dafb;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.calculator {
+  background-color: #3c4043;
+  border-radius: 12px;
+  padding: 20px;
+  border: 2px solid #61dafb;
+  box-shadow: 0 4px 20px rgba(97, 218, 251, 0.2);
+}
+
+.calculator-display {
+  background-color: #1e1e1e;
+  border: 2px solid #61dafb;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.display-value {
+  font-size: 32px;
+  font-weight: bold;
+  color: #61dafb;
+  word-break: break-all;
+  text-align: right;
+  width: 100%;
+}
+
+.calculator-buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.calc-button {
+  height: 60px;
+  font-size: 20px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: white;
+}
+
+.calc-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.calc-button:active {
+  transform: translateY(0);
+}
+
+.calc-button.number {
+  background-color: #4a4d50;
+  border: 1px solid #666;
+}
+
+.calc-button.number:hover {
+  background-color: #5a5d60;
+}
+
+.calc-button.operation {
+  background-color: #61dafb;
+  color: #282c34;
+}
+
+.calc-button.operation:hover {
+  background-color: #21a1c4;
+}
+
+.calc-button.plus {
+  grid-row: span 2;
+  height: 132px;
+}
+
+.calc-button.equals {
+  background-color: #28a745;
+  color: white;
+}
+
+.calc-button.equals:hover {
+  background-color: #218838;
+}
+
+.calc-button.clear {
+  background-color: #dc3545;
+  color: white;
+}
+
+.calc-button.clear:hover {
+  background-color: #c82333;
+}
+
+.calc-button.zero {
+  grid-column: span 2;
+}
+
+.calc-button.decimal {
+  background-color: #4a4d50;
+  border: 1px solid #666;
+}
+
+.calc-button.decimal:hover {
+  background-color: #5a5d60;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+  .calculator-container {
+    padding: 10px;
+  }
+  
+  .calculator {
+    padding: 15px;
+  }
+  
+  .calculator-buttons {
+    gap: 8px;
+  }
+  
+  .calc-button {
+    height: 50px;
+    font-size: 18px;
+  }
+  
+  .calc-button.plus {
+    height: 108px;
+  }
+  
+  .display-value {
+    font-size: 28px;
+  }
+}
